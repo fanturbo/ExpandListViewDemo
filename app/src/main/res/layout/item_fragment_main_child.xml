@@ -1,15 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <ExpandableListView
+
+    <com.demo.expandlistviewdemo.CustomExpandableListView
         android:id="@+id/expandableListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:childDivider="#00000000"
         android:divider="#efefef"
         android:dividerHeight="0dp"
-        android:groupIndicator="@null"></ExpandableListView>
+        android:groupIndicator="@null"></com.demo.expandlistviewdemo.CustomExpandableListView>
 
 </LinearLayout>

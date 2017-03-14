@@ -1,5 +1,6 @@
-package com.demo.expandlistviewdemo;
+package com.demo.expandlistviewdemo.two;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,14 +10,16 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.RelativeLayout;
 
+import com.demo.expandlistviewdemo.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment{
 
     private ExpandableListView expandableListView;
-    private List<GrandFather> grandFatherList;
-    private FirstAdapter mAdapter;
+    private List<Sort> sortList;
+    private SortExpandListViewAdapter mAdapter;
     private RelativeLayout mSearchRealtive;
 
     @Nullable
@@ -37,32 +40,25 @@ public class MainFragment extends Fragment {
     }
 
     protected void initData() {
-        grandFatherList = new ArrayList<>();
+        sortList = new ArrayList<>();
         for (int j = 0; j < 6; j++) {
-            GrandFather grandFather = new GrandFather();
-            grandFather.cname = "Group_" + j;
-            List<GrandFather.Father> fatherList = new ArrayList<>();
-            for (int i = 0; i < 2; i++) {
-                GrandFather.Father father = new GrandFather.Father();
-                father.setId(i + "");
-                father.setName("G_" + j + "_Node_" + i);
-                List<GrandFather.Son> sonList = new ArrayList<>();
-                for (int k = 0; k < 3; k++) {
-                    GrandFather.Son son = new GrandFather.Son();
-                    son.setName("G_" + j + "_Node_" + i + "_Son_" + k);
-                    sonList.add(son);
-                }
-                father.setSonList(sonList);
-                fatherList.add(father);
+            Sort sort = new Sort();
+            sort.cname = "Group_" + j;
+            List<Node> list = new ArrayList<>();
+            for (int i = 0; i < 8; i++) {
+                Node node = new Node();
+                node.setId(i + "");
+                node.setName("G_"+j+"_Node_" + i);
+                list.add(node);
             }
-            grandFather.setFatherList(fatherList);
-            grandFatherList.add(grandFather);
+            sort.nodes = list;
+            sortList.add(sort);
         }
         fillData();
     }
 
     private void fillData() {
-        mAdapter = new FirstAdapter(getContext(), grandFatherList);
+        mAdapter = new SortExpandListViewAdapter(getContext(), sortList);
         expandableListView.setAdapter(mAdapter);
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
             @Override

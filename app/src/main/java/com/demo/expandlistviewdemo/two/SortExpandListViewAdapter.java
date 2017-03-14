@@ -1,4 +1,4 @@
-package com.demo.expandlistviewdemo;
+package com.demo.expandlistviewdemo.two;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.demo.expandlistviewdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;

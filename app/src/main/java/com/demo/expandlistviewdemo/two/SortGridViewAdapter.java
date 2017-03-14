@@ -1,10 +1,12 @@
-package com.demo.expandlistviewdemo;
+package com.demo.expandlistviewdemo.two;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.demo.expandlistviewdemo.R;
 
 import java.util.List;
 

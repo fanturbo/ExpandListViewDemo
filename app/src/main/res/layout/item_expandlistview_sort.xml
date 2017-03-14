@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.demo.expandlistviewdemo.MyGridView
+    <com.demo.expandlistviewdemo.two.MyGridView
         android:id="@+id/sort_gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,5 +12,5 @@
         android:gravity="center"
         android:horizontalSpacing="10dp"
         android:numColumns="3"
-        android:verticalSpacing="10dp"></com.demo.expandlistviewdemo.MyGridView>
+        android:verticalSpacing="10dp"></com.demo.expandlistviewdemo.two.MyGridView>
 </LinearLayout>
